@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
-import "./index.css";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import { Router } from "./routes/routes.tsx";
+
+import "./index.css";
 
 const rootElement = document.getElementById("root");
 
@@ -13,6 +14,9 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <Router />
+    <HelmetProvider>
+      <Helmet titleTemplate="%s | Pizza.shop" />
+      <Router />
+    </HelmetProvider>
   </StrictMode>,
 );
