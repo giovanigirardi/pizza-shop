@@ -2,7 +2,7 @@ import { Search, ArrowRight, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { TableRow, TableCell } from "@/components/ui/table";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { OrderDetails } from "./order-details";
 
 export function OrderTableRow() {
