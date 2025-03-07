@@ -1,8 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 
 import { AppLayout } from "@/pages/_layouts/app";
 import { AuthLayout } from "@/pages/_layouts/auth";
 
+import { NotFound } from "@/pages/404";
 import { Dashboard } from "@/pages/app/dashboard/dashboard";
 import { Orders } from "@/pages/app/orders/orders";
 import { SignIn } from "@/pages/auth/sign-in";
@@ -12,7 +13,7 @@ export function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<AppLayout />}>
+        <Route element={<AppLayout />} errorElement={<NotFound />}>
           <Route index element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
         </Route>
